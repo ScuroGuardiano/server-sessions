@@ -1,0 +1,30 @@
+{
+  "name": "server-sessions",
+  "version": "1.0.0",
+  "description": "Manage your session data on server side",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha && del test-sessions.sqlite"
+  },
+  "keywords": [
+    "server-session",
+    "server-session-storage",
+    "session-storage",
+    "session",
+    "sessions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ScuroGuardiano/server-sessions.git"
+  },
+  "author": "ScuroGuardiano",
+  "license": "MIT",
+  "dependencies": {
+    "safe-json-stringify": "^1.2.0",
+    "sequelize": "^4.38.0",
+    "sqlite": "^2.9.2"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
