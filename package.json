@@ -1,11 +1,12 @@
 {
   "name": "server-sessions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Manage your session data on server side",
   "main": "index.js",
   "scripts": {
     "test": "mocha && del test-sessions.sqlite"
   },
+  "types": "./typings/index.d.ts",
   "keywords": [
     "server-session",
     "server-session-storage",
