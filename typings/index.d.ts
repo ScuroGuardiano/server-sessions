@@ -40,5 +40,5 @@ declare module 'server-sessions' {
         private _model: Sequelize.Model<ISessionInstance, ISessionAttributes>
         private _storage: Sequelize.Sequelize;
     }
-    export function init(options?: ISessionManagerOptions): SessionManager;
+    export function init(options?: ISessionManagerOptions): Promise<SessionManager>;
 }

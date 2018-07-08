@@ -1,6 +1,6 @@
 {
   "name": "server-sessions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Manage your session data on server side",
   "main": "index.js",
   "scripts": {
