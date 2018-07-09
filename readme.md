@@ -136,7 +136,7 @@ interface ISessionData {
     userId?: string;
     basket: IProduct[];
 }
-let sessionManager: ServerSession.SessionManager<ISessionData> = await ServerSession.init<ISessionData>(); //Remember to specify type of SessionManager if you need it
+let sessionManager: ServerSessions.SessionManager<ISessionData> = await ServerSessions.init<ISessionData>(); //Remember to specify type of SessionManager if you need it
 ```
 
 # License
