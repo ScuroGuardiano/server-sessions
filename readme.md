@@ -125,6 +125,20 @@ To test run
     });
 ```
 
+# Typescript support
+With Typescript you can specify type of session data, like that:
+```ts
+interface IProduct {
+    id: number;
+    amount: number;
+}
+interface ISessionData {
+    userId?: string;
+    basket: IProduct[];
+}
+let sessionManager = await ServerSession.init<ISessionData>();
+```
+
 # License
 Copyright 2018 ScuroGuardiano
 

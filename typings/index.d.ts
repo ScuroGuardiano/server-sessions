@@ -25,11 +25,11 @@ declare module 'server-sessions' {
         /** After how many miliseconds session is expired after session renew, default 1h */
         renewTimestamp?: number;
     }
-    export class SessionManager {
+    export class SessionManager<T = any> {
         private constructor(options: ISessionManagerOptions, storage: Sequelize.Sequelize, model: Sequelize.Model<ISessionInstance, ISessionAttributes>);
-        public createSession(data?: any): Promise<string>;
-        public retrieveSession(token: string): Promise<any>;
-        public updateSession(token: string, data?: any): Promise<any>;
+        public createSession(data?: T): Promise<string>;
+        public retrieveSession(token: string): Promise<T>;
+        public updateSession(token: string, data?: T): Promise<T>;
         public renewSession(token: string): Promise<boolean>;
         public removeSession(token: string): Promise<boolean>;
         public removeExpiredSessions(): Promise<number>;
@@ -40,5 +40,5 @@ declare module 'server-sessions' {
         private _model: Sequelize.Model<ISessionInstance, ISessionAttributes>
         private _storage: Sequelize.Sequelize;
     }
-    export function init(options?: ISessionManagerOptions): Promise<SessionManager>;
+    export function init<T = any>(options?: ISessionManagerOptions): Promise<SessionManager<T>>;
 }
