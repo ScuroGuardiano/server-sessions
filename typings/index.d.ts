@@ -15,8 +15,6 @@ declare module 'server-sessions' {
         updatedAt?: string;
     }
 
-    export type ISessionInstance = Sequelize.Instance<ISessionAttributes> & ISessionAttributes;
-
     export interface ISessionManagerOptions {
         /** After how many miliseconds session is expired, default 24h */
         expireTime?: number;
@@ -26,7 +24,7 @@ declare module 'server-sessions' {
         renewTimestamp?: number;
     }
     export class SessionManager<T = any> {
-        private constructor(options: ISessionManagerOptions, storage: Sequelize.Sequelize, model: Sequelize.Model<ISessionInstance, ISessionAttributes>);
+        private constructor(options: ISessionManagerOptions, storage: Sequelize.Sequelize, model: any);
         /**
         * Create session and return session token
         * @param data session data
@@ -62,11 +60,11 @@ declare module 'server-sessions' {
         * Removes all expired sessions, returns amount of deleted sessions
         */
         public removeExpiredSessions(): Promise<number>;
-        private _renewSessionInstance(session: ISessionInstance): boolean;
-        private _validateSession(session: ISessionInstance): boolean;
+        private _renewSessionInstance(session: any): boolean;
+        private _validateSession(session: any): boolean;
 
         private _settings: ISessionManagerOptions;
-        private _model: Sequelize.Model<ISessionInstance, ISessionAttributes>
+        private _model: any;
         private _storage: Sequelize.Sequelize;
     }
     export function init<T = any>(options?: ISessionManagerOptions): Promise<SessionManager<T>>;
