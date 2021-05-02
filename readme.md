@@ -1,3 +1,7 @@
+# DON'T USE THIS PACKAGE
+# THIS PACKAGE IS OLD AND NO LONGER MAINTAINED!!!
+
+
 [![NPM](https://nodei.co/npm/server-sessions.png)](https://nodei.co/npm/server-sessions/)  
 Session storage manager that use Sequelize and SQLite with Typescript support
 
